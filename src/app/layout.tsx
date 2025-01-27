@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from '@/components/Navbar';
 import "./globals.css";
@@ -21,8 +20,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,15 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
-      
-      <Navbar />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navbar />
         {children}
         <footer className="text-center mt-16 text-gray-600">
-        © {new Date().getFullYear()} The University of Texas at Dallas, National Society of Black Engineers
-      </footer>
-<footer className="text-center mt-16 text-gray-600" >Send all Inquires to: <a href="mailto:utdnsbe@outlook.com">utdnsbe@outlook.com</a> </footer>
-
+          © {new Date().getFullYear()} The University of Texas at Dallas, National Society of Black Engineers
+        </footer>
+        <footer className="text-center mt-16 text-gray-600">
+          Send all Inquiries to: <a href="mailto:utdnsbe@outlook.com">utdnsbe@outlook.com</a>
+        </footer>
       </body>
     </html>
   );

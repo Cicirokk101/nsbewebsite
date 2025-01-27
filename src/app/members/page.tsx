@@ -1,9 +1,6 @@
 import React from 'react';
 import { Shirt, Clock, Calendar } from 'lucide-react';
-
-export const metadata = {
-  title: 'Membership | NSBE',
-}
+import Image from 'next/image';
 
 interface BenefitCardProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -45,16 +42,13 @@ const MembershipPage = () => {
   return (
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
-        {/* Page Title */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-black">
             How to become a <span className="text-yellow-500">Member</span>
           </h1>
         </div>
 
-        {/* Main Content */}
         <div className="flex flex-col md:flex-row gap-12">
-          {/* Instructions & Payment Section */}
           <div className="md:w-1/2 space-y-8">
             <div className="bg-white p-8 rounded-lg shadow-md">
               <h2 className="text-2xl font-bold mb-6 text-black">Membership Instructions</h2>
@@ -67,14 +61,14 @@ const MembershipPage = () => {
                       href="https://account.venmo.com/u/nsbeutd" 
                       className="flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors"
                     >
-                      <img src="/img/App_Icon.png" alt="Venmo" className="w-6 h-6 mr-2" />
+                      <Image src="/img/App_Icon.png" alt="Venmo" width={24} height={24} className="mr-2" />
                       Venmo
                     </a>
                     <a 
                       href="https://cash.app/$nsbeutd" 
                       className="flex items-center justify-center bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
                     >
-                      <img src="/img/CashApp.png" alt="Cash App" className="w-6 h-6 mr-2" />
+                      <Image src="/img/CashApp.png" alt="Cash App" width={24} height={24} className="mr-2" />
                       Cash App
                     </a>
                   </div>
@@ -97,7 +91,6 @@ const MembershipPage = () => {
             </div>
           </div>
 
-          {/* Benefits Section */}
           <div className="md:w-1/2">
             <h2 className="text-2xl font-bold mb-6 text-black">Member Benefits</h2>
             <div className="space-y-6">
@@ -112,8 +105,6 @@ const MembershipPage = () => {
             </div>
           </div>
         </div>
-
-        
       </div>
     </main>
   );

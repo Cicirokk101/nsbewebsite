@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { CalendarDays, Award, Users } from 'lucide-react';
-
+import { CalendarDays, Award } from 'lucide-react';
+import Image from 'next/image';
 
 const ConferencePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,13 +30,11 @@ const ConferencePage = () => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);  // Added slides.length dependency
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* Hero Section with Slider */}
       <section className="relative h-screen">
-        {/* Background with overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -46,7 +44,6 @@ const ConferencePage = () => {
           <div className="absolute inset-0 bg-black/70"></div>
         </div>
 
-        {/* Hero Content */}
         <div className="relative z-10 flex items-center justify-start h-full container mx-auto px-4">
           <div className="max-w-2xl pt-20">
             <h1 className="text-5xl font-bold text-white mb-4">
@@ -61,12 +58,10 @@ const ConferencePage = () => {
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        {/* Conference Information Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center text-black">Quick Info About Our Conferences</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Fall Regional Conference Card */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center mb-4">
@@ -93,7 +88,6 @@ const ConferencePage = () => {
               </div>
             </div>
 
-            {/* National Conference Card */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center mb-4">
@@ -101,7 +95,7 @@ const ConferencePage = () => {
                   <h3 className="text-2xl font-bold text-black">National Conference</h3>
                 </div>
                 <div className="space-y-4">
-                  <p className="text-black">NSBE's premier professional event</p>
+                  <p className="text-black">NSBE&apos;s premier professional event</p>
                   <ul className="space-y-2">
                     <li className="flex items-center text-black">
                       <span className="font-semibold mr-2">When:</span> March 5th-9th
@@ -125,50 +119,36 @@ const ConferencePage = () => {
           </div>
         </section>
 
-        {/* Point System Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-black">How to Attend With UTD NSBE</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-black">Point System Overview</h2>
           
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold mb-6 text-black">Point System Overview</h3>
-              
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="bg-yellow-100 rounded-full p-4 mx-auto w-16 h-16 flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-yellow-600">60%</span>
-                  </div>
-                  <h4 className="font-semibold mb-2 text-black">Attendance</h4>
-                  <p className="text-sm text-black">Attend events and check in/out</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="bg-yellow-100 rounded-full p-4 mx-auto w-16 h-16 flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-yellow-600">25%</span>
-                  </div>
-                  <h4 className="font-semibold mb-2 text-black">Interview</h4>
-                  <p className="text-sm text-black">10-minute elevator pitch</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="bg-yellow-100 rounded-full p-4 mx-auto w-16 h-16 flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-yellow-600">15%</span>
-                  </div>
-                  <h4 className="font-semibold mb-2 text-black">Application</h4>
-                  <p className="text-sm text-black">Resume, LinkedIn, and GitHub review</p>
-                </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-yellow-100 rounded-full p-4 mx-auto w-16 h-16 flex items-center justify-center mb-4">
+                <span className="text-2xl font-bold text-yellow-600">60%</span>
               </div>
+              <h4 className="font-semibold mb-2 text-black">Attendance</h4>
+              <p className="text-sm text-black">Attend events and check in/out</p>
+            </div>
 
-              <div className="mt-8 text-center">
-                <p className="text-sm text-black">
-                  Note: Additional bonus points available for membership length and paid membership status
-                </p>
+            <div className="text-center">
+              <div className="bg-yellow-100 rounded-full p-4 mx-auto w-16 h-16 flex items-center justify-center mb-4">
+                <span className="text-2xl font-bold text-yellow-600">25%</span>
               </div>
+              <h4 className="font-semibold mb-2 text-black">Interview</h4>
+              <p className="text-sm text-black">10-minute elevator pitch</p>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-yellow-100 rounded-full p-4 mx-auto w-16 h-16 flex items-center justify-center mb-4">
+                <span className="text-2xl font-bold text-yellow-600">15%</span>
+              </div>
+              <h4 className="font-semibold mb-2 text-black">Application</h4>
+              <p className="text-sm text-black">Resume, LinkedIn, and GitHub review</p>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center text-black">Frequently Asked Questions</h2>
           
@@ -176,7 +156,7 @@ const ConferencePage = () => {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-bold mb-3 text-black">Do I have to go with UTD NSBE?</h3>
               <p className="text-black">
-                No! Anyone can attend NSBE conferences individually. While we can only provide paid travel & accommodations for select members, you're welcome to attend independently. There are also outside grants available to help with expenses!
+                No! Anyone can attend NSBE conferences individually. While we can only provide paid travel & accommodations for select members, you&apos;re welcome to attend independently. There are also outside grants available to help with expenses!
               </p>
             </div>
 

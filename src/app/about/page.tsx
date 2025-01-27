@@ -1,7 +1,10 @@
 import React from 'react';
+import Image from 'next/image';
+
 export const metadata = {
   title: 'About Us | NSBE',
 }
+
 const AboutPage = () => {
   return (
     <main className="py-16 px-4 max-w-7xl mx-auto">
@@ -15,9 +18,11 @@ const AboutPage = () => {
           </p>
         </div>
         <div className="flex-1">
-          <img 
+          <Image 
             src='/img/funpic2.png' 
             alt="NSBE Community" 
+            width={800}
+            height={600}
             className="rounded-lg shadow-lg w-full"
           />
         </div>
@@ -29,14 +34,16 @@ const AboutPage = () => {
           <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
           <p className="text-gray-600">
             To increase the number of culturally responsible Black engineers who excel academically, succeed professionally, and positively impact the community. 
-            UTD NSBE's goal is to assist Black Engineers growth and development, by providing them with workshops, events, and the potential to network with industry
+            UTD NSBE&apos;s goal is to assist Black Engineers&apos; growth and development, by providing them with workshops, events, and the potential to network with industry
             professionals.
           </p>
         </div>
         <div className="flex-1">
-          <img 
-            src= '/img/nsbeReg3.jpg' 
+          <Image 
+            src='/img/nsbeReg3.jpg' 
             alt="NSBE Mission" 
+            width={800}
+            height={600}
             className="rounded-lg shadow-lg w-full"
           />
         </div>
@@ -72,12 +79,13 @@ const AboutPage = () => {
               Support all Engineers in their technical development
             </li>
           </ul>
-          
         </div>
         <div className="flex-1">
-          <img 
+          <Image 
             src='/img/nsbeReg4.jpg'
             alt="NSBE Goals" 
+            width={800}
+            height={600}
             className="rounded-lg shadow-lg w-full"
           />
         </div>
