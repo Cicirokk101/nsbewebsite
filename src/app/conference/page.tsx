@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { CalendarDays, Award } from 'lucide-react';
-import Image from 'next/image';
+
 
 const ConferencePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
