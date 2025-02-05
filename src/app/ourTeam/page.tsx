@@ -152,7 +152,7 @@ const teamMembers = [
     role: "Membership Chair",
     year: "Junior",
     major: "Mechanical Engineering",
-    image: "/img/Victoria.jpg",
+    image: "/img/Vicky.jpg",
     linkedin: "https://www.linkedin.com/in/victoria-nwosu-146b45248/"
   }
 ];

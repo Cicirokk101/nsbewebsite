@@ -1,24 +1,24 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import EventCalendar from '@/components/calendar'
+
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   
   const slides = [
     {
-      image: '/img/img3.png',
+      image: '/img/Declass.jpg',
       title: 'We are UTD',
       subtitle: 'We are team of Black Engineers hoping to make a positive impact on the community'
     },
     {
-      image: '/img/nsbe8.png',
+      image: '/img/nsbeGMB1.jpg',
       title: 'We are UTD',
       subtitle: 'We are team of Black Engineers hoping to make a positive impact on the community'
     },
     {
-      image: '/img/funpic1.png',
+      image: '/img/cleanUp.png',
       title: 'We are UTD',
       subtitle: 'We are team of Black Engineers hoping to make a positive impact on the community'
     },
@@ -63,7 +63,7 @@ const Home = () => {
           </h2>
           
           <div className="flex justify-center mb-20">
-            <EventCalendar />
+            <iframe src="https://calendar.google.com/calendar/embed?src=i44211kjhalmvimv0pmrsvmg08%40group.calendar.google.com&ctz=America%2FChicago"  width="800" height="600"  scrolling="no"></iframe>
           </div>
         </div>
       </section>
