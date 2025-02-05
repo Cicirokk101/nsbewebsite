@@ -13,7 +13,7 @@ const Home = () => {
       subtitle: 'We are team of Black Engineers hoping to make a positive impact on the community'
     },
     {
-      image: '/img/nsbeGMB1.jpg',
+      image: '/img/nsbeGBM1.jpg',
       title: 'We are UTD',
       subtitle: 'We are team of Black Engineers hoping to make a positive impact on the community'
     },
