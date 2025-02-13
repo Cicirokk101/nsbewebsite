@@ -117,7 +117,7 @@ const teamMembers = [
   },
   {
     name: "Nykaela Burks",
-    role: "Technology ChairTelecommunications Chair",
+    role: "Technology Chair",
     year: "Sophomore",
     major: "Computer Science",
     image: "/img/Nykaela Burks.jpg",
