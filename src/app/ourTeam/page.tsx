@@ -83,7 +83,7 @@ const teamMembers = [
     image: "/img/sami.jpg",
     linkedin: "https://www.linkedin.com/in/samihyusuf/"
   },
-  ,
+  
   {
     name: "Nykaela Burks",
     role: "Technology Chair",
