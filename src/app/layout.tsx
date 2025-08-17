@@ -5,9 +5,10 @@ import "./globals.css";
 export const metadata = {
   title: 'NSBE UTD',
   icons: {
-    icon: '/img/nsbe.png',
+    icon: '/UTDNSBE.ico',
   },
 }
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
