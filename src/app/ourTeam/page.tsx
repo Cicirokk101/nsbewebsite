@@ -83,6 +83,14 @@ const teamMembers = [
     image: "/img/sami.jpg",
     linkedin: "https://www.linkedin.com/in/samihyusuf/"
   },
+  {
+    name: "Leila Igwegbe",
+    role: "Programs Chair",
+    year: "Junior",
+    major: "Computer Science",
+    image: "/img/leila new pic.jpeg",
+    linkedin: "https://www.linkedin.com/in/leila-igwegbe/"
+  },
   
   {
     name: "Nykaela Burks",
