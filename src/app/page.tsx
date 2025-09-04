@@ -62,9 +62,16 @@ const Home = () => {
             NSBE CALENDAR
           </h2>
           
-          <div className="flex justify-center mb-20">
-            <iframe src="https://calendar.google.com/calendar/embed?src=888b1e1f60ccd4421bcf40928242c35c9980e373841251aed52c0bf7f2e3ccf9%40group.calendar.google.com&ctz=America%2FChicago" styles="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-          </div>
+         <div className="flex justify-center mb-20">
+  <iframe
+    title="Google Calendar"
+    src="https://calendar.google.com/calendar/embed?src=888b1e1f60ccd4421bcf40928242c35c9980e373841251aed52c0bf7f2e3ccf9%40group.calendar.google.com&ctz=America%2FChicago"
+    style={{ border: 0 }}
+    className="w-full max-w-[800px] h-[600px] md:h-[700px]"
+    frameBorder="0"
+    loading="lazy"
+  />
+</div>
         </div>
       </section>
 
