@@ -1,83 +1,93 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
+const slides = [
+  {
+    image: '/img/Declass.jpg',
+    title: 'We are UTD NSBE',
+    subtitle:
+      'Empowering Black engineers to excel academically, grow professionally, and impact the community',
+  },
+  {
+    image: '/img/nsbeGBM1.jpg',
+    title: 'We are UTD NSBE',
+    subtitle:
+      'Empowering Black engineers to excel academically, grow professionally, and impact the community',
+  },
+  {
+    image: '/img/cleanUp.png',
+    title: 'We are UTD NSBE',
+    subtitle:
+      'Empowering Black engineers to excel academically, grow professionally, and impact the community',
+  },
+]
 
-const Home = () => {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  
-  const slides = [
-    {
-      image: '/img/Declass.jpg',
-      title: 'We are UTD',
-      subtitle: 'We are team of Black Engineers hoping to make a positive impact on the community'
-    },
-    {
-      image: '/img/nsbeGBM1.jpg',
-      title: 'We are UTD',
-      subtitle: 'We are team of Black Engineers hoping to make a positive impact on the community'
-    },
-    {
-      image: '/img/cleanUp.png',
-      title: 'We are UTD',
-      subtitle: 'We are team of Black Engineers hoping to make a positive impact on the community'
-    },
-  ]
+// calendar moved to its own page at /calendar
+
+export default function Home() {
+  const [current, setCurrent] = useState(0)
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [slides.length])
+    const id = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 5000)
+    return () => clearInterval(id)
+  }, [])
 
   return (
     <main className="min-h-screen">
-      <section className="relative h-screen">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${slides[currentSlide].image})`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/70"></div>
+      <section className="relative h-[100svh]">
+        <div className="absolute inset-0">
+          {slides.map((s, i) => (
+            <Image
+              key={i}
+              src={s.image}
+              alt=""
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className={`object-cover transition-opacity duration-700 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+            />
+          ))}
+          <div className="absolute inset-0 bg-black/70" />
         </div>
 
-        <div className="relative z-10 flex items-center justify-start h-full container mx-auto px-4">
-          <div className="max-w-2xl pt-20">
-            <h1 className="text-5xl font-bold text-white mb-4">
-              {slides[currentSlide].title}
-              <span className="text-[#ffc451]"> NSBE</span>
-            </h1>
-            <h2 className="text-xl text-white">
-              {slides[currentSlide].subtitle}
-            </h2>
+        <div className="relative z-10 flex h-full items-center justify-start">
+          <div className="container mx-auto px-4 pt-20">
+            <div className="max-w-2xl">
+              <h1 className="mb-4 text-5xl font-bold text-white">
+                {slides[current].title}
+                <span className="text-[#ffc451]">.</span>
+              </h1>
+              <h2 className="mb-6 text-lg md:text-xl text-white">{slides[current].subtitle}</h2>
+              <a
+                href="/members"
+                className="inline-block bg-[#ffc451] text-black px-6 py-3 rounded-md font-semibold hover:bg-[#ffd571] transition-colors"
+              >
+                Become a Member
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-center text-3xl font-bold text-green-600 mb-12">
-            NSBE CALENDAR
-          </h2>
-          
-         <div className="flex justify-center mb-20">
-  <iframe
-    title="Google Calendar"
-    src="https://calendar.google.com/calendar/embed?src=888b1e1f60ccd4421bcf40928242c35c9980e373841251aed52c0bf7f2e3ccf9%40group.calendar.google.com&ctz=America%2FChicago"
-    style={{ border: 0 }}
-    className="w-full max-w-[800px] h-[600px] md:h-[700px]"
-    frameBorder="0"
-    loading="lazy"
-  />
-</div>
+          <h2 className="mb-6 text-center text-3xl font-bold text-green-600">Upcoming Events</h2>
+          <p className="text-center mb-6 text-gray-700 max-w-2xl mx-auto">
+            See what’s coming up — meetings, workshops, and community events. For the full agenda and RSVP options, view the calendar page.
+          </p>
+
+          <div className="flex items-center justify-center">
+            <a
+              href="/calendar"
+              className="inline-block bg-[#ffc451] text-black px-6 py-3 rounded-md font-semibold hover:bg-[#ffd571] transition-colors"
+            >
+              View Full Calendar
+            </a>
+          </div>
         </div>
       </section>
-
-
     </main>
-  );
-};
-
-export default Home;
+  )
+}

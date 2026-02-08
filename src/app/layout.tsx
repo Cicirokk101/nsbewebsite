@@ -30,7 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
-        {children}
+        {/* pad top so fixed navbar doesn't overlap content */}
+        <div className="pt-16">{children}</div>
         <footer className="text-center mt-16 text-gray-600">
           © {new Date().getFullYear()} The University of Texas at Dallas, National Society of Black Engineers
         </footer>

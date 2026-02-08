@@ -59,7 +59,9 @@ const SponsorPage = () => {
               { src: "/sponors/hak.png", alt: "HAK" },
               { src: "/sponors/geico.jpg", alt: "Geico" },
               { src: "/sponors/matchgrouplogo.png", alt: "Match Group" },
-              { src: "/sponors/tx.png", alt: "Texas Instruments" }
+              { src: "/sponors/tx.png", alt: "Texas Instruments" },
+              { src: "/sponors/pngtree-google-seo-promotion-icon-vector-png-image_9183333.png", alt: "SEO" },
+              { src: "/sponors/nokia.jfif", alt: "Nokia" }
             ].map((sponsor, i) => (
               <div key={i} className="bg-white p-8 rounded-lg shadow-lg">
                 <Image 
